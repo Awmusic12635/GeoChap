@@ -23,7 +23,6 @@ class NewCacheAuthTest extends TestCase
             ->type('94.234324234,-35.74352343', 'location')
             ->type('small', 'size')
             ->type('traditional', 'type')
-            ->type('small', 'size')
             ->type('like fo reals this is short yo', 'short_description')
             ->type('like fo reals this is the longest description that could be possible yo. but I am a creative fellow 
             and I need to express my art in the form of comments that is where I actually discuss the true meaning of 
