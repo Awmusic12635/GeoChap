@@ -40,6 +40,9 @@ class AdminController extends Controller
         return view('admin.index',compact('cacheCount','userCount','commentCount','checkinCount','eventCount','pendingCount'));
     }
 
+    /*
+     * Show a full list of all caches to admin
+     */
     public function showCaches(Request $request){
 
         //GET ALL THE CACHES
@@ -47,6 +50,21 @@ class AdminController extends Controller
 
 
         return view('admin.caches',compact('caches'));
+    }
+
+    /*
+     * Admin add new cache form
+     */
+    public function newCacheForm(Request $request){
+        return view('admin.newcache');
+    }
+
+    /*
+     * Handle the post request to add a new cache
+     */
+
+    public function addCache(Request $request){
+        
     }
 
 }
