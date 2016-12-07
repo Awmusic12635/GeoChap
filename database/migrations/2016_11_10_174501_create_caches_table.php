@@ -24,7 +24,7 @@ class CreateCachesTable extends Migration
             $table->string('short_description');
             $table->mediumText('long_description');
             $table->boolean('approved')->default(false);
-            $table->integer('created_by');
+            $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
