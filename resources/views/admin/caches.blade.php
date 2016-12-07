@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($cache as $caches)
+        @foreach($caches as $cache)
         <tr>
             <td>{{$cache->name}}</td>
             <td>{{$cache->lat}}</td>
