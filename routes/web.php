@@ -51,7 +51,7 @@ Route::post('/events/{eventId}/join', 'EventController@joinEvent')->middleware('
 
 Route::get('/admin', 'AdminController@showAdmin')->middleware('auth');
 
-Route::get('/admin/caches', 'AdminController@showAdmin')->middleware('auth');
+Route::get('/admin/caches', 'AdminController@showCaches')->middleware('auth');
 Route::get('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth');
 Route::post('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth');
 Route::get('/admin/caches/awaitingApproval', 'AdminController@showAdmin')->middleware('auth');

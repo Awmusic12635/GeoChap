@@ -13,6 +13,9 @@ use App\Checkin;
 
 class AdminController extends Controller
 {
+    /*
+     * Show the admin dashboard
+     */
     public function showAdmin(Request $request){
 
         //Get total cache #
@@ -36,4 +39,14 @@ class AdminController extends Controller
 
         return view('admin.index',compact('cacheCount','userCount','commentCount','checkinCount','eventCount','pendingCount'));
     }
+
+    public function showCaches(Request $request){
+
+        //GET ALL THE CACHES
+        $caches = Cache::all();
+
+
+        return view('admin.caches',compact('caches'));
+    }
+
 }
