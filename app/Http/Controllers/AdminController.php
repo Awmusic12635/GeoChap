@@ -11,5 +11,7 @@ use App\Cache;
 
 class AdminController extends Controller
 {
-    //
+    public function showAdmin(Request $request){
+        return view('admin.index');
+    }
 }
