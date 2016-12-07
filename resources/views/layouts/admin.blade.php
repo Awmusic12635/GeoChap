@@ -203,13 +203,12 @@
             </div>
         </div>
     </div>
-</div>
 
         <!-- /top navigation -->
-
-@yield('content')
     <!-- page content -->
     <div class="right_col" role="main">
+@yield('content')
+
     <!-- footer content -->
         <footer>
             <div class="pull-right">
