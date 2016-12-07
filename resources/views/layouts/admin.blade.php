@@ -205,6 +205,8 @@
         <!-- /top navigation -->
 
 @yield('content')
+    <!-- page content -->
+    <div class="right_col" role="main">
     <!-- footer content -->
         <footer>
             <div class="pull-right">

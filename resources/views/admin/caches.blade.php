@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<!-- page content -->
-<div class="right_col" role="main">
-    <table id="cachetable">
+    <table id="cachetable" class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Name</th>
@@ -32,5 +30,4 @@
     <script>
         $('#cachetable').DataTable();
     </script>
-</div>
 @endsection
