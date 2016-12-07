@@ -216,6 +216,7 @@
         </footer>
         <!-- /footer content -->
     </div>
+    </div>
 </div>
 <!-- jQuery -->
 <script src="/vendors/jquery/dist/jquery.min.js"></script>
