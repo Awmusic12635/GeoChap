@@ -10,7 +10,8 @@
     </div>
     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-clock-o"></i> Cache Count</span>
-        <div class="count">{{$cacheCount}}</div<!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>-->
+        <div class="count">{{$cacheCount}}</div>
+        <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>-->
     </div>
     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-user"></i> Checkin Count</span>
