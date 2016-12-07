@@ -202,6 +202,7 @@
                 </nav>
             </div>
         </div>
+    </div>
         <!-- /top navigation -->
 
 @yield('content')
