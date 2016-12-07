@@ -8,10 +8,32 @@ use App\Http\Requests;
 use App\Event;
 use App\User;
 use App\Cache;
+use App\Comment;
+use App\Checkin;
 
 class AdminController extends Controller
 {
     public function showAdmin(Request $request){
-        return view('admin.index');
+
+        //Get total cache #
+        $cacheCount = count(Cache::all());
+
+        //Get pending cache count #
+        $pendingCount = count(Cache::where('approved',false)->get());
+
+        //Get total user #
+        $userCount = count(User::all());
+
+        //Get total comment #
+        $commentCount = count(Comment::all());
+
+        //Get total checkins #
+        $checkinCount = count(Checkin::all());
+
+        //Get total event #
+        $eventCount = count(Event::all());
+
+
+        return view('admin.index',compact('cacheCount','userCount','commentCount','checkinCount','eventCount','pendingCount'));
     }
 }
