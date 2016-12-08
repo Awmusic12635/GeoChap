@@ -61,10 +61,10 @@
                         <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
                             <label for="size" class="col-md-4 control-label">Size:</label>
                             <div class="col-md-6">
-                                <select id="size" name="size" class="form-control" value="{{$cache->size}}"required>
-                                    <option value="small">Small</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="large">Large</option>
+                                <select id="size" name="size" class="form-control" required>
+                                    <option @if($cache->size =="small") selected @endif value="small">Small</option>
+                                    <option @if($cache->size =="medium") selected @endif value="medium">Medium</option>
+                                    <option @if($cache->size =="large") selected @endif value="large">Large</option>
                                 </select>
                             </div>
                             @if ($errors->has('size'))
@@ -76,8 +76,8 @@
                         <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                             <label for="type" class="col-md-4 control-label">Type:</label>
                             <div class="col-md-6">
-                                <select id="type" name="type" class="form-control" value="{{$cache->type}}" required>
-                                    <option value="traditional">Traditional</option>
+                                <select id="type" name="type" class="form-control" required>
+                                    <option @if($cache->type =="traditional") selected @endif value="traditional">Traditional</option>
                                 </select>
                             </div>
                             @if ($errors->has('type'))
