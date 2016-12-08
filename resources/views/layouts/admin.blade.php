@@ -25,13 +25,18 @@
     <link href="/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
+
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
 
     <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!--<script src="/vendors/jquery/dist/jquery.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
 
