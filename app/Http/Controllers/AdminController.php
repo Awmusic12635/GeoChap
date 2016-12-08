@@ -64,7 +64,48 @@ class AdminController extends Controller
      */
 
     public function addCache(Request $request){
+        //Validate the information sent in via the form.
+        // if validation fails, it will redirect the the user back to where it was submitted
+        // and show the errors
 
+        $this->validate($request, [
+            'name' => 'required|max:255|',
+            'lat'=>'required|numeric',
+            'long'=>'required|numeric',
+            'type'=>'required',
+            'short_description' => 'required|max:255',
+            'long_description'=>'required|max:200'
+        ]);
+
+        //Yay validation passed, lets grab the data from the request and create a new cache
+
+
+        //Grabs the submitted data from the POST request
+        $name = $request->input('name');
+        $lat = $request->input('lat');
+        $long = $request->input('long');
+        $size = $request->input('size');
+        $type = $request->input('type');
+        $short_description = $request->input('short_description');
+        $long_description = $request->input('long_description');
+        $created_by = $request->input('created_by');
+
+        $cache = new Cache();
+
+        $cache->name = $name;
+        $cache->lat=$lat;
+        $cache->long=$long;
+        $cache->size=$size;
+        $cache->type=$type;
+        $cache->short_description=$short_description;
+        $cache->long_description=$long_description;
+        $cache->created_by=$created_by;
+
+        //this actually saves the object to the database
+        $cache->save();
+
+        //not sure if I have to redirect back to a specific view after this
+        redirect('admin.index');
     }
 
 }
