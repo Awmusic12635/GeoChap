@@ -13,4 +13,13 @@ class Cache extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
 }

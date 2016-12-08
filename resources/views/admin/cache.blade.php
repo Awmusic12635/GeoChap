@@ -107,8 +107,8 @@
                             <label for="type" class="col-md-4 control-label">Approved:</label>
                             <div class="col-md-6">
                                 <select id="approved" name="approved" class="form-control" required>
-                                    <option @if($cache->approved ==1) selected @endif value="true">True</option>
-                                    <option @if($cache->approved ==0) selected @endif value="false">False</option>
+                                    <option @if($cache->approved ==true) selected @endif value="true">True</option>
+                                    <option @if($cache->approved ==false) selected @endif value="false">False</option>
                                 </select>
                             </div>
                             @if ($errors->has('approved'))

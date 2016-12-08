@@ -115,6 +115,63 @@ class AdminController extends Controller
 
     }
 
+    public function editCache(Request $request, $cacheId){
+//Validate the information sent in via the form.
+        // if validation fails, it will redirect the the user back to where it was submitted
+        // and show the errors
+
+        $caches = Cache::where('id',$cacheId)->get();
+
+        if($caches->isEmpty()){
+            abort(404);
+        }else{
+            $cache = $caches->first();
+
+            $this->validate($request, [
+                'name' => 'required|max:255|',
+                'latitude'=>'required|numeric',
+                'longitude'=>'required|numeric',
+                'short_description' => 'required|max:255',
+                'long_description'=>'required|max:200'
+            ]);
+
+            //Yay validation passed, lets grab the data from the request and create a new cache
+
+
+            //Grabs the submitted data from the POST request
+            $name = $request->input('name');
+            $lat = $request->input('latitude');
+            $long = $request->input('longitude');
+            $size = $request->input('size');
+            $type = $request->input('type');
+            $approved = $request->input('approved');
+            $status = $request->input('status');
+            $short_description = $request->input('short_description');
+            $long_description = $request->input('long_description');
+
+            $cache->name = $name;
+            $cache->lat=$lat;
+            $cache->long=$long;
+            $cache->size=$size;
+            $cache->type=$type;
+            $cache->approved=$approved;
+            $cache->status=$status;
+            $cache->short_description=$short_description;
+            $cache->long_description=$long_description;
+
+            //this actually saves the object to the database
+            $cache->save();
+
+            //not sure if I have to redirect back to a specific view after this
+            
+            //this seemed to make a blank white page
+            //redirect('admin.index')->back();
+            redirect('admin.caches')->with('success','Cache saved successfuly');
+
+            //return view('admin.cache',compact('cache'));
+        }
+    }
+
     public function awaitingApproval(Request $request){
 
         $pendingCaches = Cache::where('approved',false)->get();
@@ -125,9 +182,14 @@ class AdminController extends Controller
     public function showCache(Request $request,$cacheId){
         //should handle a 404 error at some point
 
-        $cache = Cache::where('id',$cacheId)->get()->first();
+        $caches = Cache::where('id',$cacheId)->get();
 
-        return view('admin.cache',compact('cache'));
+        if($caches->isEmpty()){
+            abort(404);
+        }else{
+            $cache = $caches->first();
+            return view('admin.cache',compact('cache'));
+        }
     }
 
 
