@@ -227,9 +227,9 @@ class AdminController extends Controller
             $user = $users->first();
 
             $this->validate($request, [
-                'username' => 'required|max:255|',
+                'username' => 'required|max:255',
                 'email'=>'required|email',
-                'is_admin'=>'required|boolean',
+                'is_admin'=>'required',
                 'password' => 'max:255',
             ]);
 
