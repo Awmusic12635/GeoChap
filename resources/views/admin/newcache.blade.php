@@ -70,28 +70,20 @@
                 </span>
         @endif
     </div>
-    <!--<div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
-        <label for="size" class="col-md-4 control-label">Size</label>
-        <div class="col-md-6">
-            <input id="size" type="textbox" class="form-control" name="size" required>
-            @if ($errors->has('size'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('size') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>-->
     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-        <label for="type" class="col-md-4 control-label">Type</label>
+        <label for="size" class="col-md-4 control-label">Type:</label>
         <div class="col-md-6">
-            <input id="type" type="textbox" class="form-control" name="type" required>
-            @if ($errors->has('type'))
-                <span class="help-block">
+            <select id="type" class="form-control" required>
+                <option value="traditional">Traditional</option>
+            </select>
+        </div>
+        @if ($errors->has('type'))
+            <span class="help-block">
                     <strong>{{ $errors->first('type') }}</strong>
                 </span>
-            @endif
-        </div>
+        @endif
     </div>
+
     <div class="form-group{{ $errors->has('short_description') ? ' has-error' : '' }}">
         <label for="short_description" class="col-md-4 control-label">Short Description</label>
         <div class="col-md-6">
