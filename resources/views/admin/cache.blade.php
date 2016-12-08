@@ -87,6 +87,38 @@
                             @endif
                         </div>
 
+                        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Status:</label>
+                            <div class="col-md-6">
+                                <select id="status" name="status" class="form-control" required>
+                                    <option @if($cache->status =="good") selected @endif value="good">Good</option>
+                                    <option @if($cache->status =="missing") selected @endif value="missing">Missing</option>
+                                    <option @if($cache->status =="damaged") selected @endif value="damaged">Damaged</option>
+                                </select>
+                            </div>
+                            @if ($errors->has('status'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('status') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group{{ $errors->has('approved') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Approved:</label>
+                            <div class="col-md-6">
+                                <select id="approved" name="approved" class="form-control" required>
+                                    <option @if($cache->approved ==1) selected @endif value="true">True</option>
+                                    <option @if($cache->approved ==0) selected @endif value="false">False</option>
+                                </select>
+                            </div>
+                            @if ($errors->has('approved'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('approved') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+
                         <div class="form-group{{ $errors->has('short_description') ? ' has-error' : '' }}">
                             <label for="short_description" class="col-md-4 control-label">Short Description</label>
                             <div class="col-md-6">
@@ -94,8 +126,8 @@
                                        value="{{$cache->short_description}}"required>
                                 @if ($errors->has('short_description'))
                                     <span class="help-block">
-                    <strong>{{ $errors->first('short_description') }}</strong>
-                </span>
+                                <strong>{{ $errors->first('short_description') }}</strong>
+                                    </span>
                                 @endif
                             </div>
                         </div>
