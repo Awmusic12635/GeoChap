@@ -87,7 +87,7 @@ class AdminController extends Controller
         $type = $request->input('type');
         $short_description = $request->input('short_description');
         $long_description = $request->input('long_description');
-        $created_by = $request->user();
+        $created_by = $request->user()->id;
 
 
         //$request->input('created_by');
