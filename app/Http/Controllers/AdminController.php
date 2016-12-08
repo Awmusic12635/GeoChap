@@ -251,7 +251,7 @@ class AdminController extends Controller
 
             //this seemed to make a blank white page
             //redirect('admin.index')->back();
-            //redirect('admin.users')->with('success','User saved successfuly');
+            redirect('admin.users')->with('success','User saved successfuly');
 
             //return view('admin.cache',compact('cache'));
         }
