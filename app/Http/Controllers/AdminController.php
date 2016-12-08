@@ -70,8 +70,8 @@ class AdminController extends Controller
 
         $this->validate($request, [
             'name' => 'required|max:255|',
-            'lat'=>'required|numeric',
-            'long'=>'required|numeric',
+            'latitude'=>'required|numeric',
+            'longitude'=>'required|numeric',
             'short_description' => 'required|max:255',
             'long_description'=>'required|max:200'
         ]);
