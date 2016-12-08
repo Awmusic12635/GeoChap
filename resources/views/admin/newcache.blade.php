@@ -58,7 +58,7 @@
     <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
         <label for="size" class="col-md-4 control-label">Size:</label>
         <div class="col-md-6">
-            <select id="size" class="form-control" required>
+            <select id="size" name="size" class="form-control" required>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
@@ -73,7 +73,7 @@
     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
         <label for="type" class="col-md-4 control-label">Type:</label>
         <div class="col-md-6">
-            <select id="type" class="form-control" required>
+            <select id="type" name="type" class="form-control" required>
                 <option value="traditional">Traditional</option>
             </select>
         </div>
