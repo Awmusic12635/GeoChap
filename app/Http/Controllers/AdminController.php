@@ -125,7 +125,7 @@ class AdminController extends Controller
     public function showCache(Request $request,$cacheId){
         //should handle a 404 error at some point
 
-        $cache = Cache::where('id',$cacheId)->get();
+        $cache = Cache::where('id',$cacheId)->get()->first();
 
         return view('admin.cache',compact('cache'));
     }

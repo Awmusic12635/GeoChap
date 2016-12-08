@@ -23,7 +23,7 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" role="form" method="POST" action="{{ url('/admin/caches/'.$cache->id) }}">
+                    <form class="form-horizontal form-label-left" role="form" method="POST" action="{{ url('/admin/caches/'.$cache[0]->id) }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
