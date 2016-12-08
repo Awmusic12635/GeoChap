@@ -96,9 +96,13 @@
         </div>
     </div>
     <div class="form-group{{ $errors->has('long_description') ? ' has-error' : '' }}">
-        <label for="long_description" class="col-md-4 control-label">Long Description</label>
+        <label for="long_description" class="col-md-4 control-label">Long Description (20 chars min, 200 max):</label>
         <div class="col-md-6">
-            <input id="long_description" type="textbox" class="form-control" name="long_description" required>
+            <textarea id="long_description" required="required" class="form-control" name="long_description"
+                      data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="200"
+                      data-parsley-minlength-message="Come on! You need to enter at least a 20 character
+                      long description.."
+                      data-parsley-validation-threshold="10"></textarea>
             @if ($errors->has('long_description'))
                 <span class="help-block">
                     <strong>{{ $errors->first('long_description') }}</strong>
