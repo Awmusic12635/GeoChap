@@ -39,7 +39,7 @@
                         <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                             <label for="latitude" class="col-md-4 control-label">Latitude</label>
                             <div class="col-md-6">
-                                <input id="latitude" type="textbox" class="form-control" name="latitude" value="{{$cache->latitude}}"required>
+                                <input id="latitude" type="textbox" class="form-control" name="latitude" value="{{$cache->lat}}"required>
                                 @if ($errors->has('latitude'))
                                     <span class="help-block">
                     <strong>{{ $errors->first('latitude') }}</strong>
@@ -50,7 +50,7 @@
                         <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                             <label for="longitude" class="col-md-4 control-label">Longitude</label>
                             <div class="col-md-6">
-                                <input id="longitude" type="textbox" class="form-control" name="longitude" value="{{$cache->longitude}}" required>
+                                <input id="longitude" type="textbox" class="form-control" name="longitude" value="{{$cache->long}}" required>
                                 @if ($errors->has('longitude'))
                                     <span class="help-block">
                     <strong>{{ $errors->first('longitude') }}</strong>
@@ -106,7 +106,7 @@
                       data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="200"
                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character
                       long description.."
-                      data-parsley-validation-threshold="10" value="{{$cache->long_description}}"></textarea>
+                      data-parsley-validation-threshold="10">{{$cache->long_description}}</textarea>
                                 @if ($errors->has('long_description'))
                                     <span class="help-block">
                     <strong>{{ $errors->first('long_description') }}</strong>
