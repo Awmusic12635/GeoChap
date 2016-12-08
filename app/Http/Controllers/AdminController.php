@@ -72,7 +72,6 @@ class AdminController extends Controller
             'name' => 'required|max:255|',
             'lat'=>'required|numeric',
             'long'=>'required|numeric',
-            'type'=>'required',
             'short_description' => 'required|max:255',
             'long_description'=>'required|max:200'
         ]);

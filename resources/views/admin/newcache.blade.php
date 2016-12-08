@@ -67,7 +67,7 @@
         @if ($errors->has('size'))
             <span class="help-block">
                     <strong>{{ $errors->first('size') }}</strong>
-                </span>
+            </span>
         @endif
     </div>
     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
@@ -80,7 +80,7 @@
         @if ($errors->has('type'))
             <span class="help-block">
                     <strong>{{ $errors->first('type') }}</strong>
-                </span>
+            </span>
         @endif
     </div>
 
