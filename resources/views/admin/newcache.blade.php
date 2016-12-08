@@ -71,7 +71,7 @@
         @endif
     </div>
     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-        <label for="size" class="col-md-4 control-label">Type:</label>
+        <label for="type" class="col-md-4 control-label">Type:</label>
         <div class="col-md-6">
             <select id="type" class="form-control" required>
                 <option value="traditional">Traditional</option>
