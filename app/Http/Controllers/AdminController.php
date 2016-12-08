@@ -197,7 +197,21 @@ class AdminController extends Controller
         //GET ALL THE USERS
         $users = User::all();
 
+        //hmm this doesn't count fully right. Look into why
         return view('admin.users',compact('users'));
+    }
+
+    public function showUser(Request $request,$userId){
+        //should handle a 404 error at some point
+
+        $users = User::where('id',$userId)->get();
+
+        if($users->isEmpty()){
+            abort(404);
+        }else{
+            $user = $users->first();
+            return view('admin.user',compact('user'));
+        }
     }
 
 
