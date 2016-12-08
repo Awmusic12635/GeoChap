@@ -242,7 +242,7 @@ class AdminController extends Controller
 
             $user->username = $username;
             $user->email=$email;
-            $user->is_admin=(int)$isadmin;
+            $user->is_admin=$isadmin;
 
             //this actually saves the object to the database
             $user->save();

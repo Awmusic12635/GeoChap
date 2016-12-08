@@ -51,8 +51,8 @@
                             <label for="is_admin" class="col-md-4 control-label">Admin:</label>
                             <div class="col-md-6">
                                 <select id="is_admin" name="is_admin" class="form-control" required>
-                                    <option @if($user->is_admin ==true) selected @endif value="true">True</option>
-                                    <option @if($user->is_admin ==false) selected @endif value="false">False</option>
+                                    <option @if($user->is_admin ==true) selected @endif value="1">True</option>
+                                    <option @if($user->is_admin ==false) selected @endif value="0">False</option>
                                 </select>
                             </div>
                             @if ($errors->has('is_admin'))
