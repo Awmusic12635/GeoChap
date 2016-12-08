@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Caches</h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
     <table id="cachetable" class="table table-striped table-bordered">
         <thead>
             <tr>

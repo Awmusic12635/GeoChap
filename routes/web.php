@@ -54,8 +54,8 @@ Route::get('/admin', 'AdminController@showAdmin')->middleware('auth','admin_chec
 Route::get('/admin/caches', 'AdminController@showCaches')->middleware('auth','admin_check');
 Route::post('/admin/caches', 'AdminController@addCache')->middleware('auth','admin_check');
 Route::get('/admin/caches/new', 'AdminController@newCacheForm')->middleware('auth','admin_check');
-Route::get('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
-Route::post('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::get('/admin/caches/{cacheId}', 'AdminController@showCache')->middleware('auth','admin_check');
+Route::post('/admin/caches/{cacheId}', 'AdminController@editCache')->middleware('auth','admin_check');
 Route::get('/admin/caches/awaitingApproval', 'AdminController@awaitingApproval')->middleware('auth','admin_check');
 
 Route::get('/admin/users', 'AdminController@showAdmin')->middleware('auth','admin_check');

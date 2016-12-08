@@ -122,4 +122,13 @@ class AdminController extends Controller
         return view('admin.awaitingApproval',compact('pendingCaches'));
     }
 
+    public function showCache(Request $request,$cacheid){
+        //should handle a 404 error at some point
+
+        $cache = Cache::where('id',$cacheid)->get();
+
+        return view('admin.cache',compact('cache'));
+    }
+
+
 }
