@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @foreach($caches as $cache)
-            <a href="/admin/cache/{{$cache->id}}"><tr>
+            <tr class="clickable-row" data-id="{{$cache->id}}">
                 <td>{{$cache->name}}</td>
                 <td>{{$cache->lat}}</td>
                 <td>{{$cache->long}}</td>
@@ -35,11 +35,14 @@
                         True
                     @endif
                 </td>
-                </tr></a>
+                </tr>
             @endforeach
         </tbody>
     </table>
     <script>
         $('#cachetable').DataTable();
+        $('.clickable-row').click(function(){
+            window.location=$(this).data('id');
+        })
     </script>
 @endsection
