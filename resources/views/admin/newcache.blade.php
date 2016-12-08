@@ -57,11 +57,13 @@
     </div>
     <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
         <label for="size" class="col-md-4 control-label">Size:</label>
-        <select id="size" class="form-control" required>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-        </select>
+        <div class="col-md-6">
+            <select id="size" class="form-control" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
         @if ($errors->has('size'))
             <span class="help-block">
                     <strong>{{ $errors->first('size') }}</strong>
