@@ -56,6 +56,19 @@
         </div>
     </div>
     <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
+        <label for="size">Heard us by *:</label>
+        <select id="size" class="form-control" required>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        @if ($errors->has('size'))
+            <span class="help-block">
+                    <strong>{{ $errors->first('size') }}</strong>
+                </span>
+        @endif
+    </div>
+    <!--<div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
         <label for="size" class="col-md-4 control-label">Size</label>
         <div class="col-md-6">
             <input id="size" type="textbox" class="form-control" name="size" required>
@@ -65,7 +78,7 @@
                 </span>
             @endif
         </div>
-    </div>
+    </div>-->
     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
         <label for="type" class="col-md-4 control-label">Type</label>
         <div class="col-md-6">
@@ -101,7 +114,7 @@
     </div>
     <div class="ln_solid"></div>
     <div class="form-group">
-        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+        <div class="col-md-6 col-sm-6 col-xs-12">
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
