@@ -163,7 +163,7 @@ class AdminController extends Controller
             $cache->save();
 
             //not sure if I have to redirect back to a specific view after this
-            
+
             //this seemed to make a blank white page
             //redirect('admin.index')->back();
             redirect('admin.caches')->with('success','Cache saved successfuly');
