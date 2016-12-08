@@ -29,10 +29,9 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+
     <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
-    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -234,8 +233,9 @@
     </div>
 </div>
 
-
-
+<!-- jQuery -->
+<script src="/vendors/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <!-- Bootstrap -->
 <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
