@@ -16,7 +16,13 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
                             <div class="well profile_view">
                                 <div class="col-sm-12">
-                                    <h4 class="brief"><i>@if($user->is_admin==true)Admin@else User@endif</i></h4>
+                                    <h4 class="brief"><i>
+                                            @if($user->is_admin==true)
+                                                Admin
+                                            @else
+                                                User
+                                            @endif
+                                        </i></h4>
                                     <div class="left col-xs-7">
                                         <h2>{{$user->username}}</h2>
                                         <ul class="list-unstyled">
