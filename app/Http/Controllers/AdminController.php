@@ -230,7 +230,6 @@ class AdminController extends Controller
                 'username' => 'required|max:255',
                 'email'=>'required|email',
                 'is_admin'=>'required',
-                'password' => 'max:255',
             ]);
 
             //Yay validation passed, lets grab the data from the request and create a new cache
@@ -240,13 +239,10 @@ class AdminController extends Controller
             $username = $request->input('username');
             $email = $request->input('email');
             $isadmin = $request->input('is_admin');
-            $password = bcrypt($request->input('password'),$user->password);
-
 
             $user->username = $username;
             $user->email=$email;
             $user->is_admin=$isadmin;
-            $user->password=$password;
 
             //this actually saves the object to the database
             $user->save();
