@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @foreach($caches as $cache)
-            <tr class="clickable-row" data-id="{{$cache->id}}" onclick="window.location='/admin/cache/{{$cache->id}}'">
+            <tr style="cursor:pointer" class="clickable-row" data-id="{{$cache->id}}" onclick="window.location='/admin/caches/{{$cache->id}}'">
                 <td>{{$cache->name}}</td>
                 <td>{{$cache->lat}}</td>
                 <td>{{$cache->long}}</td>
