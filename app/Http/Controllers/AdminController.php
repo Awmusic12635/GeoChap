@@ -214,5 +214,52 @@ class AdminController extends Controller
         }
     }
 
+    public function editUser(Request $request,$userId){
+//Validate the information sent in via the form.
+        // if validation fails, it will redirect the the user back to where it was submitted
+        // and show the errors
+
+        $users = User::where('id',$userId)->get();
+
+        if($users->isEmpty()){
+            abort(404);
+        }else{
+            $user = $users->first();
+
+            $this->validate($request, [
+                'username' => 'required|max:255|',
+                'email'=>'required|email',
+                'is_admin'=>'required|boolean',
+                'password' => 'max:255',
+            ]);
+
+            //Yay validation passed, lets grab the data from the request and create a new cache
+
+
+            //Grabs the submitted data from the POST request
+            $username = $request->input('username');
+            $email = $request->input('email');
+            $isadmin = $request->input('is_admin');
+            $password = bcrypt($request->input('password'),$user->password);
+
+
+            $user->username = $username;
+            $user->email=$email;
+            $user->is_admin=$isadmin;
+            $user->password=$password;
+
+            //this actually saves the object to the database
+            $user->save();
+
+            //not sure if I have to redirect back to a specific view after this
+
+            //this seemed to make a blank white page
+            //redirect('admin.index')->back();
+            redirect('admin.users')->with('success','User saved successfuly');
+
+            //return view('admin.cache',compact('cache'));
+        }
+    }
+
 
 }
