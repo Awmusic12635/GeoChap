@@ -111,8 +111,15 @@ class AdminController extends Controller
 
         //this seemed to make a blank white page
         //redirect('admin.index')->back();
-        redirect()->back()->with('success','Cache added successfuly');
+        redirect('admin.newcache')->with('success','Cache added successfuly');
 
+    }
+
+    public function awaitingApproval(Request $request){
+
+        $pendingCaches = Cache::where('approved',false)->get();
+
+        return view('admin.awaitingApproval',compact('pendingCaches'));
     }
 
 }
