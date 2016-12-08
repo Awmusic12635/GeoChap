@@ -69,7 +69,16 @@
                             <li><a><i class="fa fa-home"></i> Admin <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="/admin">Admin Dashboard</a></li>
-                                    <li><a href="/admin/caches">Caches</a></li>
+                                    <li><a>Caches<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li class="sub_menu"><a href="/admin/caches">List Caches</a>
+                                            </li>
+                                            <li><a href="/admin/caches/new">Add Cache</a>
+                                            </li>
+                                            <li><a href="/admin/caches/awaitingApproval">Awaiting Approval</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li><a href="/admin/users">Users</a></li>
                                 </ul>
                             </li>
