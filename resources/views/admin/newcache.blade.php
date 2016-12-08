@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="clearfix"></div>
-@if($success)
+@if(! empty($success))
     <div class="alert alert-success" role="alert">{{$success}}</div>
 @endif
 <div class="row">
