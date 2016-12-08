@@ -49,22 +49,22 @@ Route::post('/events/{eventId}/join', 'EventController@joinEvent')->middleware('
 
 //update controller function names and write the controller
 
-Route::get('/admin', 'AdminController@showAdmin')->middleware('auth');
+Route::get('/admin', 'AdminController@showAdmin')->middleware('auth','admin_check');
 
-Route::get('/admin/caches', 'AdminController@showCaches')->middleware('auth');
-Route::post('/admin/caches', 'AdminController@addCache')->middleware('auth');
-Route::get('/admin/caches/new', 'AdminController@newCacheForm')->middleware('auth');
-Route::get('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth');
-Route::post('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth');
-Route::get('/admin/caches/awaitingApproval', 'AdminController@showAdmin')->middleware('auth');
+Route::get('/admin/caches', 'AdminController@showCaches')->middleware('auth','admin_check');
+Route::post('/admin/caches', 'AdminController@addCache')->middleware('auth','admin_check');
+Route::get('/admin/caches/new', 'AdminController@newCacheForm')->middleware('auth','admin_check');
+Route::get('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::post('/admin/caches/{cacheId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::get('/admin/caches/awaitingApproval', 'AdminController@showAdmin')->middleware('auth','admin_check');
 
-Route::get('/admin/users', 'AdminController@showAdmin')->middleware('auth');
-Route::get('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth');
-Route::post('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth');
+Route::get('/admin/users', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::get('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::post('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
 
-Route::get('/admin/events', 'AdminController@showAdmin')->middleware('auth');
-Route::get('/admin/events/{eventId}', 'AdminController@showAdmin')->middleware('auth');
-Route::post('/admin/events/{eventId}', 'AdminController@showAdmin')->middleware('auth');
+Route::get('/admin/events', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::get('/admin/events/{eventId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::post('/admin/events/{eventId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
 
 
 /*
