@@ -21,15 +21,21 @@
         </thead>
         <tbody>
             @foreach($caches as $cache)
-            <tr>
+            <a href="/admin/cache/{{$cache->id}}"><tr>
                 <td>{{$cache->name}}</td>
                 <td>{{$cache->lat}}</td>
                 <td>{{$cache->long}}</td>
                 <td>{{$cache->status}}</td>
                 <td>{{$cache->size}}</td>
                 <td>{{$cache->type}}</td>
-                <td>{{$cache->approved}}</td>
-            </tr>
+                <td>
+                    @if($cache->approved == 0)
+                        False
+                    @else
+                        True
+                    @endif
+                </td>
+                </tr></a>
             @endforeach
         </tbody>
     </table>
