@@ -59,7 +59,7 @@ Route::get('/admin/caches/{cacheId}', 'AdminController@showCache')->middleware('
 Route::post('/admin/caches/{cacheId}', 'AdminController@editCache')->middleware('auth','admin_check');
 
 
-Route::get('/admin/users', 'AdminController@showAdmin')->middleware('auth','admin_check');
+Route::get('/admin/users', 'AdminController@showUsers')->middleware('auth','admin_check');
 Route::get('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
 Route::post('/admin/users/{userId}', 'AdminController@showAdmin')->middleware('auth','admin_check');
 

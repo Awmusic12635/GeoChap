@@ -192,5 +192,13 @@ class AdminController extends Controller
         }
     }
 
+    public function showUsers(Request $request){
+
+        //GET ALL THE USERS
+        $users = User::all();
+
+        return view('admin.users',compact('users'));
+    }
+
 
 }
