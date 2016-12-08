@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -234,6 +232,8 @@
     </div>
 </div>
 
+<!-- jQuery -->
+<script src="/vendors/jquery/dist/jquery.min.js"></script>
 
 <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
 <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
