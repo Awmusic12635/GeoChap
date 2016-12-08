@@ -40,9 +40,9 @@
         </tbody>
     </table>
     <script>
-        $(document).ready(function(){
-            $('#cachetable').DataTable();
-            $('.clickable-row').click(function(){
+        JQuery(document).ready(function(){
+            JQuery('#cachetable').DataTable();
+            JQuery('.clickable-row').click(function(){
                 window.location=$(this).data('id');
             });
         });
