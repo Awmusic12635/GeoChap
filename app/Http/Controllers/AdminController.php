@@ -64,7 +64,7 @@ class AdminController extends Controller
      */
 
     public function addCache(Request $request){
-        
+
     }
 
 }
