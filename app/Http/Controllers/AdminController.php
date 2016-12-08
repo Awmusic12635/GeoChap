@@ -68,27 +68,30 @@ class AdminController extends Controller
         // if validation fails, it will redirect the the user back to where it was submitted
         // and show the errors
 
-        /*$this->validate($request, [
+        $this->validate($request, [
             'name' => 'required|max:255|',
             'lat'=>'required|numeric',
             'long'=>'required|numeric',
             'type'=>'required',
             'short_description' => 'required|max:255',
             'long_description'=>'required|max:200'
-        ]);*/
+        ]);
 
         //Yay validation passed, lets grab the data from the request and create a new cache
 
 
         //Grabs the submitted data from the POST request
         $name = $request->input('name');
-        $lat = $request->input('lat');
-        $long = $request->input('long');
+        $lat = $request->input('latitude');
+        $long = $request->input('longitude');
         $size = $request->input('size');
         $type = $request->input('type');
         $short_description = $request->input('short_description');
         $long_description = $request->input('long_description');
-        $created_by = $request->input('created_by');
+        $created_by = $request->user();
+
+
+        //$request->input('created_by');
 
         $cache = new Cache();
 
