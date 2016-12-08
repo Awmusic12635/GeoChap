@@ -255,7 +255,6 @@
 <!-- Skycons -->
 <script src="/vendors/skycons/skycons.js"></script>
 <!-- Flot -->
-<script src="/vendors/flot.curvedlines/curvedLines.js"></script>
 <!-- DateJS -->
 <script src="/vendors/DateJS/build/date.js"></script>
 <!-- JQVMap -->
