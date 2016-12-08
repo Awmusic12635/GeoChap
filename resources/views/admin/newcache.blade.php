@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="form-group{{ $errors->has('size') ? ' has-error' : '' }}">
-        <label for="size">Heard us by *:</label>
+        <label for="size" class="col-md-4 control-label">Size:</label>
         <select id="size" class="form-control" required>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
