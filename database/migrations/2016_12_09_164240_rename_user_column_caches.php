@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class RenameUserColumnCaches extends Migration
 {
@@ -11,6 +12,10 @@ class RenameUserColumnCaches extends Migration
      *
      * @return void
      */
+    public function __construct()
+    {
+        DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
+    }
     public function up()
     {
         Schema::table('caches', function ($table) {
