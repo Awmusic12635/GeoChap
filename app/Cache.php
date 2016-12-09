@@ -11,7 +11,7 @@ class Cache extends Model
      * Get the user that owns this cache
      */
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function checkin(){
