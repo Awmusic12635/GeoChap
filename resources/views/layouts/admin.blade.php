@@ -70,8 +70,8 @@
                     <div class="menu_section">
 
                         <ul class="nav side-menu">
-
-                            @if(Auth::check() && Auth::user()->is_admin)
+                            @if(Auth::check())
+                            @if(Auth::user()->is_admin)
                             <h3>Admin</h3>
                             <li><a><i class="fa fa-home"></i> Admin <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
@@ -89,6 +89,7 @@
                                     <li><a href="/admin/users">Users</a></li>
                                 </ul>
                             </li>
+                            @endif
                             @endif
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
