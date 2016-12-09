@@ -53,7 +53,6 @@
                     <div class="clearfix"></div>
                 </div>
                 <ul class="list-unstyled top_profiles scroll-view">
-                    @if(!empty($users))
                     @foreach($users as $user)
                     <li class="media event">
                         <a class="pull-left border-blue profile_thumb">
@@ -62,12 +61,11 @@
                         <div class="media-body">
                             <a class="title" href="/users/{{$user->id}}">{{$user->username}}</a>
                             <p><strong>{{count($user->checkins())}} </strong> Checkins Total </p>
-                            <p> <small>Joined {{date("F", mktime(0, 0, 0, $user->created_at->month, 1)) ." " .$user->created_at->day }}</small>
+                            <p> <small>Joined {{date("F", mktime(0, 0, 0, $user->created_at->month(), 1)) ." " .$user->created_at->day() }}</small>
                             </p>
                         </div>
                     </li>
                     @endforeach
-                    @endif
                 </ul>
             </div>
         </div>
