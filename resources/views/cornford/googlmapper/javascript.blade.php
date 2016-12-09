@@ -2,7 +2,7 @@
 
     @if ($view->share('javascript', true)) @endif
 
-    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v={!! $options['version'] !!}&region={!! $options['region'] !!}&language={!! $options['language'] !!}&key={!! $options['key'] !!}&signed_in={!! $options['user'] ? 'true' : 'false' !!}&libraries=places" async defer></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v={!! $options['version'] !!}&region={!! $options['region'] !!}&language={!! $options['language'] !!}&key={!! $options['key'] !!}&signed_in={!! $options['user'] ? 'true' : 'false' !!}&libraries=places&callback=initialize_0"" async defer></script>
 
     @if ($options['cluster'])
 
