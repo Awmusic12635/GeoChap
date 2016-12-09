@@ -25,7 +25,7 @@ class IndexController extends Controller
         //later change this to ("approved",true)
         $caches = Cache::where('approved',false)->latest()->limit(10)->get();
         $users = User::latest()->limit(10)->get();
-        $events = Event::where()->latest()->limit(10)->get();
+        $events = Event::where('id','>',0)->latest()->limit(10)->get();
 
         return view('public.index',compact('caches','users','events'));
     }
