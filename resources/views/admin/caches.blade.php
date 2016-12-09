@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @foreach($caches as $cache)
-            <tr style="cursor:pointer" class="clickable-row" data-id="{{$cache->id}}" onclick="window.location='/admin/caches/{{$cache->id}}'">
+            <tr style="cursor:pointer" class="clickable-row" data-id="{{$cache->id}}">
                 <td>{{$cache->name}}</td>
                 <td>{{$cache->lat}}</td>
                 <td>{{$cache->long}}</td>
@@ -46,7 +46,7 @@
         $(document).ready(function(){
             $('#cachetable').DataTable();
             $('.clickable-row').click(function(){
-                window.location='/admin/cache/'+$(this).data('id');
+                window.location='/admin/caches/'+$(this).data('id');
             });
         });
     </script>
