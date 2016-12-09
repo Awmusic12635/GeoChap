@@ -63,7 +63,11 @@
                                     </li>
                                     @endfor
                                 @else
-                                    <p>No Activity Yet</p>
+                                    <li>
+                                        <div class="message_wrapper">
+                                            <h4 class="heading">No Activity Yet</h4>
+                                        </div>
+                                    </li>
                                 @endif
                             </ul>
                             <!-- end of user messages -->
