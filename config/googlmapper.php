@@ -30,7 +30,7 @@ return array(
     | The region Google API should use required in ISO 3166-1 code format.
     |
     */
-    'region' => 'GB',
+    'region' => 'USA',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return array(
     | The Language Google API should use required in ISO 639-1 code format.
     |
     */
-    'language' => 'en-gb',
+    'language' => 'en-us',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return array(
     | Googlmapper displayed map.
     |
     */
-    'marker' => true,
+    'marker' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ return array(
     | location.
     |
     */
-    'center' => true,
+    'center' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return array(
     | location.
     |
     */
-    'locate' => false,
+    'locate' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return array(
     | Set the default Googlmapper displayed map type. (ROADMAP|SATELLITE|HYBRID|TERRAIN)
     |
     */
-    'type' => 'ROADMAP',
+    'type' => 'TERRAIN',
 
     /*
     |--------------------------------------------------------------------------
