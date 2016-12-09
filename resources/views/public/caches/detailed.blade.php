@@ -55,7 +55,7 @@
                                         <img src="images/user.png" class="avatar" alt="Avatar">
                                         <div class="message_date">
                                             <h3 class="date text-info">{{$checkin[$i]->created_at->day}}</h3>
-                                            <p class="month">{{(date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
+                                            <p class="month">{{date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
                                         </div>
                                         <div class="message_wrapper">
                                             <h4 class="heading">{{$checkin[$i]->user()->username}}</h4>
