@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h3>Home</h3>
+            <h3>Home - Caches Nearest You</h3>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -40,6 +40,33 @@
                     </article>
                     @endforeach
                 </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Newest Users</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <ul class="list-unstyled top_profiles scroll-view">
+                    @foreach($users as $user)
+                    <li class="media event">
+                        <a class="pull-left border-blue profile_thumb">
+                            <i class="fa fa-user blue"></i>
+                        </a>
+                        <div class="media-body">
+                            <a class="title" href="/users/{{$user->id}}">{{$user->username}}</a>
+                            <p><strong>{{count($user->checkins())}} </strong> Checkins Total </p>
+                            <p> <small>Joined {{date("F", mktime(0, 0, 0, $user->created_at->month, 1)) ." " .$user->created_at->day }}</small>
+                            </p>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
