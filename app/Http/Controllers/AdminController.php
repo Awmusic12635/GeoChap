@@ -87,7 +87,7 @@ class AdminController extends Controller
         $type = $request->input('type');
         $short_description = $request->input('short_description');
         $long_description = $request->input('long_description');
-        $created_by = $request->user()->id;
+        $userid = $request->user()->id;
 
 
         //$request->input('created_by');
@@ -101,7 +101,7 @@ class AdminController extends Controller
         $cache->type=$type;
         $cache->short_description=$short_description;
         $cache->long_description=$long_description;
-        $cache->created_by=$created_by;
+        $cache->user_id=$userid;
 
         //this actually saves the object to the database
         $cache->save();
