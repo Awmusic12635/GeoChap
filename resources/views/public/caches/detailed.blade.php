@@ -47,7 +47,7 @@
 
                             <!-- end of user messages -->
                             <ul class="messages">
-                                @if(!empty($checkins))
+                                @if($checkins->count() >0)
                                     @for($i = 0; $i < ($checkins->count() > 4 ? 4 :$checkins->count()); $i++)
                                     <li>
                                         <img src="images/user.png" class="avatar" alt="Avatar">
