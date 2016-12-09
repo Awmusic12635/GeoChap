@@ -14,6 +14,7 @@ class RenameUserColumnCaches extends Migration
     public function up()
     {
         Schema::table('caches', function ($table) {
+            $table->dropForeign(['created_by']);
             $table->renameColumn('created_by', 'user_id');
         });
     }
