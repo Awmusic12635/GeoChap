@@ -27,7 +27,7 @@ class PublicCacheController extends Controller
             abort(404);
         }else{
             $cache = $caches->first();
-            $checkins = Checkin::where('cache_id',$cache->id)->reverse()->get();
+            $checkins = Checkin::where('cache_id',$cache->id)->latest()->get();
 
             return view('public.caches.detailed',compact('cache','checkins'));
         }
