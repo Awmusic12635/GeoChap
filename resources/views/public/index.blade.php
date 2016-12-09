@@ -34,7 +34,7 @@
                             <p class="day">{{$cache->created_at->day}}</p>
                         </a>
                         <div class="media-body">
-                            <a class="title" href="/cache/{{$cache->id}}">{{$cache->name}}</a>
+                            <a class="title" href="/caches/{{$cache->id}}">{{$cache->name}}</a>
                             <p>{{$cache->short_description}}</p>
                         </div>
                     </article>
