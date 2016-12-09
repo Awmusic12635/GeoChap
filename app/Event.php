@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
     public function checkins(){
-        return $this->belongsToMany(EventCheckin::class);
+        return $this->hasMany(EventCheckin::class);
     }
 }
