@@ -49,20 +49,22 @@
 
                             <!-- end of user messages -->
                             <ul class="messages">
-                                @for($i = 0; $i < 10; $i++)
-                                <li>
-                                    <img src="images/user.png" class="avatar" alt="Avatar">
-                                    <div class="message_date">
-                                        <h3 class="date text-info">{{$checkin[$i]->created_at->day}}</h3>
-                                        <p class="month">{{(date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
-                                    </div>
-                                    <div class="message_wrapper">
-                                        <h4 class="heading">{{$checkin[$i]->user()->username}}</h4>
-                                        <blockquote class="message">{{$checkin->comment()->message}}</blockquote>
-                                        <br />
-                                    </div>
-                                </li>
-                                @endfor
+                                @if(!empty($checkins))
+                                    @for($i = 0; $i < ($checkins->count() > 4 ? 4 :$checkins->count()); $i++)
+                                    <li>
+                                        <img src="images/user.png" class="avatar" alt="Avatar">
+                                        <div class="message_date">
+                                            <h3 class="date text-info">{{$checkin[$i]->created_at->day}}</h3>
+                                            <p class="month">{{(date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
+                                        </div>
+                                        <div class="message_wrapper">
+                                            <h4 class="heading">{{$checkin[$i]->user()->username}}</h4>
+                                            <blockquote class="message">{{$checkin->comment()->message}}</blockquote>
+                                            <br />
+                                        </div>
+                                    </li>
+                                    @endfor
+                                @endif
                             </ul>
                             <!-- end of user messages -->
                         </div>
