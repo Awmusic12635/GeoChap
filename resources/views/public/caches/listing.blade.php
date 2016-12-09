@@ -38,7 +38,7 @@
         $(document).ready(function(){
             $('#cachetable').DataTable();
             $('.clickable-row').click(function(){
-                window.location='/cache/'+$(this).data('id');
+                window.location='/caches/'+$(this).data('id');
             });
         });
     </script>
