@@ -9,14 +9,14 @@
     <div class="clearfix"></div>
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div style="height:350px;width:100%;" id="map"></div>
+            <div style="height:350px;width:100%;" id="map">{{Mapper::render()}}</div>
             <div class="x_panel">
 
             </div>
         </div>
     </div>
     <script>
-        var map;
+        /*var map;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 2,
@@ -43,11 +43,11 @@
                     map: map
                 });
             }
-        }
+        }*/
     </script>
-    <script async defer
+    <!--<script async defer
             src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&callback=initMap">
-    </script>
+    </script>-->
 
 
 @endsection

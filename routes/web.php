@@ -12,9 +12,7 @@
 */
 use App\Cache;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','IndexController@showIndex');
 
 /*
  * Cache routes
