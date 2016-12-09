@@ -32,6 +32,14 @@
 
     <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
 
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+    </style>
+
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -137,7 +145,7 @@
                             <li class="">
 
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="/images/img.jpg" alt="">{{ Auth::user()->username }}
+                                    <img src="/images/user.png" alt="">{{ Auth::user()->username }}
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -175,7 +183,7 @@
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="/images/user.png" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
