@@ -11,6 +11,7 @@ class IndexController extends Controller
 {
     public function showIndex(Request $request){
 
+        $caches = Cache::all();
 
         //defaults to rochester
         Mapper::map(43.1610,-77.6109);
