@@ -69,6 +69,32 @@
                 </ul>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Newest Events <small>Latest 10</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    @foreach($events as $event)
+                        <article class="media event">
+                            <a class="pull-left date">
+                                <p class="month">{{substr(date("F", mktime(0, 0, 0, $event->created_at->month, 1)),0,5)}}</p>
+                                <p class="day">{{$event->created_at->day}}</p>
+                            </a>
+                            <div class="media-body">
+                                <a class="title" href="/events/{{$event->id}}">{{$event->name}}</a>
+                                <p>{{$event->short_description}}</p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </div>
 
 

@@ -7,6 +7,7 @@ use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use App\Cache;
 use App\User;
+use App\Event;
 
 class IndexController extends Controller
 {
@@ -24,7 +25,8 @@ class IndexController extends Controller
         //later change this to ("approved",true)
         $caches = Cache::where('approved',false)->latest()->limit(10)->get();
         $users = User::latest()->limit(10)->get();
+        $events = Event::all()->latest->limit(10)->get();
 
-        return view('public.index',compact('caches','users'));
+        return view('public.index',compact('caches','users','events'));
     }
 }
