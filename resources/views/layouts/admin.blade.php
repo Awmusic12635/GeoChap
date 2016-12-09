@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="clearfix"></div>
-
+                @if(Auth::check())
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
@@ -60,6 +60,7 @@
                         <h2>{{ Auth::user()->username }}</h2>
                     </div>
                 </div>
+                @endif
                 <!-- /menu profile quick info -->
 
                 <br />
@@ -69,7 +70,8 @@
                     <div class="menu_section">
 
                         <ul class="nav side-menu">
-                            @if(Auth::user()->is_admin)
+
+                            @if(Auth::check() && Auth::user()->is_admin)
                             <h3>Admin</h3>
                             <li><a><i class="fa fa-home"></i> Admin <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
@@ -130,7 +132,9 @@
                     </div>
 
                     <ul class="nav navbar-nav navbar-right">
+                        @if(Auth::check())
                         <li class="">
+
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <img src="/images/img.jpg" alt="">{{ Auth::user()->username }}
                                 <span class=" fa fa-angle-down"></span>
@@ -157,6 +161,10 @@
                                 </li>
                             </ul>
                         </li>
+                        @else
+                            <li><a href="/login">Login</a></li>
+                        @endif
+
 
                         <li role="presentation" class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
