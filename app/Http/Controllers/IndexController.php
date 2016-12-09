@@ -14,7 +14,7 @@ class IndexController extends Controller
         $caches = Cache::all();
 
         //defaults to rochester
-        Mapper::map(43.1610,77.6109);
+        Mapper::map(43.1610,-77.6109);
 
         foreach($caches as $cache){
             Mapper::marker($cache->lat,$cache->long);
