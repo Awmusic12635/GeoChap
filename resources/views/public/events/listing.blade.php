@@ -90,8 +90,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
             <!-- /page content -->
                     <!-- jQuery -->
                     <script src="/vendors/jquery/dist/jquery.min.js"></script>
