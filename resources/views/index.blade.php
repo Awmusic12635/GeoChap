@@ -30,7 +30,7 @@
                     @foreach($caches as $cache)
                     <article class="media event">
                         <a class="pull-left date">
-                            <p class="month">{{date("F", mktime(0, 0, 0, $cache->created_at->month, 1))}}</p>
+                            <p class="month">{{substr(date("F", mktime(0, 0, 0, $cache->created_at->month, 1)),0,5)}}</p>
                             <p class="day">{{$cache->created_at->day}}</p>
                         </a>
                         <div class="media-body">
