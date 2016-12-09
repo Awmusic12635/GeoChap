@@ -40,9 +40,8 @@
                             </li>
                         </ul>
                         <br />
-                        <div id="mainb" style="height:350px;"></div>
                         <div style="height:350px;width:100%;" id="mainb">{!! Mapper::render() !!}</div>
-
+                        <div id="mainb"></div>
                         <div>
                             <h4>Recent Activity</h4>
 
