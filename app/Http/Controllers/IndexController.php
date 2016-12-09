@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Cornford\Googlmapper\Mapper;
+//use Cornford\Googlmapper\Mapper;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use App\Cache;
 
