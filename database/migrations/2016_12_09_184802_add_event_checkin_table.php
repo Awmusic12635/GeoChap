@@ -24,11 +24,9 @@ class AddEventCheckinTable extends Migration
 
         Schema::table('checkins', function ($table) {
 
-            $table->dropForeign(['user']);
             $table->dropForeign(['cache']);
             $table->dropForeign(['comment']);
-
-            $table->renameColumn('user', 'user_id');
+            
             $table->renameColumn('cache', 'cache_id');
             $table->renameColumn('comment', 'comment_id');
         });
