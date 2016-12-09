@@ -42,7 +42,7 @@
                         <br />
 
                         <div id="mainb" style="height:350px;"></div>
-
+                            {!! Mapper::render() !!}
                         <div>
 
                             <h4>Recent Activity</h4>
@@ -64,6 +64,8 @@
                                         </div>
                                     </li>
                                     @endfor
+                                @else
+                                    <p>No Activity Yet</p>
                                 @endif
                             </ul>
                             <!-- end of user messages -->
@@ -88,32 +90,30 @@
 
                                 <div class="project_detail">
 
-                                    <p class="title">Client Company</p>
-                                    <p>Deveint Inc</p>
-                                    <p class="title">Project Leader</p>
-                                    <p>Tony Chicken</p>
+                                    <p class="title">Created By</p>
+                                    <p>{{$cache->user()->username}}</p>
+                                    <p class="title">Status</p>
+                                    <p>{{$cache->status}}</p>
                                 </div>
 
                                 <br />
-                                <h5>Project files</h5>
+                                <h5>Details</h5>
                                 <ul class="list-unstyled project_files">
-                                    <li><a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>
+                                    <li><a href=""><i class="fa fa-file-word-o"></i> <strong>Lat: </strong>{{$cache->lat}}</a>
                                     </li>
-                                    <li><a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
+                                    <li><a href=""><i class="fa fa-file-pdf-o"></i> <strong>Long: </strong>{{$cache->long}}</a>
                                     </li>
-                                    <li><a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
+                                    <li><a href=""><i class="fa fa-mail-forward"></i> <strong>Type: </strong>{{$cache->type}}</a>
                                     </li>
-                                    <li><a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
-                                    </li>
-                                    <li><a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
+                                    <li><a href=""><i class="fa fa-picture-o"></i> <strong>Size: </strong>{{$cache->size}}</a>
                                     </li>
                                 </ul>
                                 <br />
-
+                                @if(Auth::check())
                                 <div class="text-center mtop20">
-                                    <a href="#" class="btn btn-sm btn-primary">Add files</a>
-                                    <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+                                    <a href="/cache/{{$cache->id}}/checkIn" class="btn btn-sm btn-primary">Checkin</a>
                                 </div>
+                                @endif
                             </div>
 
                         </section>
