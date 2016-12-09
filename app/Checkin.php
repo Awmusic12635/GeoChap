@@ -10,7 +10,7 @@ class Checkin extends Model
      * Get the user that owns this checkin
      */
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class);
     }
 
     /*
