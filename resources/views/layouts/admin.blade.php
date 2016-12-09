@@ -30,7 +30,7 @@
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
 
-    <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net/jquery.dataTables.min.css" rel="stylesheet">
 
 
     <script>
