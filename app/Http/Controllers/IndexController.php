@@ -17,7 +17,7 @@ class IndexController extends Controller
         Mapper::map(43.1610,-77.6109);
 
         foreach($caches as $cache){
-            Mapper::marker($cache->lat,$cache->long);
+            Mapper::marker($cache->lat,$cache->long,['eventClick' => "window.location='/cache/$cache->id';"]););
         }
 
         return view('index');
