@@ -18,14 +18,14 @@ Route::get('/','IndexController@showIndex');
  * Cache routes
  */
 
-Route::get('/caches', 'CacheController@listCaches');
-Route::get('/caches/{cacheId}', 'CacheController@showCache');
+Route::get('/caches', 'PublicCacheController@showCaches');
+Route::get('/caches/new', 'PublicCacheController@newCacheForm')->middleware('auth'); //auth means only authenticated users can access this route
+Route::get('/caches/{cacheId}', 'PublicCacheController@showCache');
 //add functions for these
-Route::get('/caches/{cacheId}/checkIn', 'CacheController@showCheckinForm')->middleware('auth');
-Route::post('/caches/{cacheId}/checkIn', 'CacheController@checkIn')->middleware('auth');
+Route::get('/caches/{cacheId}/checkIn', 'PublicCacheController@showCheckinForm')->middleware('auth');
+Route::post('/caches/{cacheId}/checkIn', 'PublicCacheController@checkIn')->middleware('auth');
 
-Route::get('/caches/new', 'CacheController@newCacheForm')->middleware('auth'); //auth means only authenticated users can access this route
-Route::post('/caches', 'CacheController@newCacheCreation')->middleware('auth');
+Route::post('/caches', 'PublicCacheController@addCache')->middleware('auth');
 
 /*
  * Event routes

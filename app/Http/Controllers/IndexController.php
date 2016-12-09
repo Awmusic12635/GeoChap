@@ -25,6 +25,6 @@ class IndexController extends Controller
         $caches = Cache::where('approved',false)->latest()->limit(10)->get();
         $users = User::latest()->limit(10)->get();
 
-        return view('index',compact('caches','users'));
+        return view('public.index',compact('caches','users'));
     }
 }
