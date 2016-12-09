@@ -111,7 +111,7 @@ class AdminController extends Controller
 
         //this seemed to make a blank white page
         //redirect('admin.index')->back();
-        redirect('admin.newcache')->with('success','Cache added successfuly');
+        return redirect()->back();
 
     }
 
@@ -166,7 +166,7 @@ class AdminController extends Controller
 
             //this seemed to make a blank white page
             //redirect('admin.index')->back();
-            redirect('admin.caches')->with('success','Cache saved successfuly');
+            return redirect()->back();
 
             //return view('admin.cache',compact('cache'));
         }
