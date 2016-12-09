@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use App\Cache;
+use App\User;
 
 class IndexController extends Controller
 {
