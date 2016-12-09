@@ -97,6 +97,8 @@
                                             <li><a href="/admin/users">Users</a></li>
                                         </ul>
                                     </li>
+                                @else
+                                    <h3>General</h3>
                                 @endif
                             @endif
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
