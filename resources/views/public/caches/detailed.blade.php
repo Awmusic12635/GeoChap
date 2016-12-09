@@ -28,11 +28,11 @@
                         <ul class="stats-overview">
                             <li>
                                 <span class="name"> Checkins </span>
-                                <span class="value text-success"> 2300 </span>
+                                <span class="value text-success"> {{$checkins->count()}} </span>
                             </li>
                             <li>
                                 <span class="name"> Comments </span>
-                                <span class="value text-success"> 2000 </span>
+                                <span class="value text-success"> {{$checkins->count()}} </span>
                             </li>
                             <li class="hidden-phone">
                                 <span class="name"> Events </span>
@@ -49,58 +49,22 @@
 
                             <!-- end of user messages -->
                             <ul class="messages">
+                                @for($i = 0; $i < 10; $i++)
                                 <li>
-                                    <img src="images/img.jpg" class="avatar" alt="Avatar">
+                                    <img src="images/user.png" class="avatar" alt="Avatar">
                                     <div class="message_date">
-                                        <h3 class="date text-info">24</h3>
-                                        <p class="month">May</p>
+                                        <h3 class="date text-info">{{$checkin[$i]->created_at->day}}</h3>
+                                        <p class="month">{{(date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
                                     </div>
                                     <div class="message_wrapper">
-                                        <h4 class="heading">Desmond Davison</h4>
-                                        <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                                        <h4 class="heading">{{$checkin[$i]->user()->username}}</h4>
+                                        <blockquote class="message">{{$checkin->comment()->message}}</blockquote>
                                         <br />
-                                        <p class="url">
-                                            <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                            <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                        </p>
                                     </div>
                                 </li>
-                                <li>
-                                    <img src="images/img.jpg" class="avatar" alt="Avatar">
-                                    <div class="message_date">
-                                        <h3 class="date text-error">21</h3>
-                                        <p class="month">May</p>
-                                    </div>
-                                    <div class="message_wrapper">
-                                        <h4 class="heading">Brian Michaels</h4>
-                                        <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                        <br />
-                                        <p class="url">
-                                            <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                            <a href="#" data-original-title="">Download</a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/img.jpg" class="avatar" alt="Avatar">
-                                    <div class="message_date">
-                                        <h3 class="date text-info">24</h3>
-                                        <p class="month">May</p>
-                                    </div>
-                                    <div class="message_wrapper">
-                                        <h4 class="heading">Desmond Davison</h4>
-                                        <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                        <br />
-                                        <p class="url">
-                                            <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                            <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                        </p>
-                                    </div>
-                                </li>
+                                @endfor
                             </ul>
                             <!-- end of user messages -->
-
-
                         </div>
 
 
