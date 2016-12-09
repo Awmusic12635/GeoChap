@@ -8,10 +8,9 @@
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
                                     <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                                      <button onclick="window.location='/events/new'" class="btn btn-default" type="button">Create Event</button>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -37,21 +36,20 @@
                                     <table id="eventtable" class="table table-striped projects">
                                         <thead>
                                         <tr>
-                                            <th style="width: 1%">#</th>
                                             <th style="width: 20%">Event Name</th>
                                             <th>Attending</th>
                                             <th>Short Description</th>
                                             <th>Event Time</th>
-                                            <th style="width: 20%">Edit</th>
+                                            <th style="width: 20%">Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($events as $event)
                                         <tr>
-                                            <td>#</td>
                                             <td>
-                                                <a>Throwing eggs at Bob!</a>
+                                                <a>{{$event->name}}</a>
                                                 <br />
-                                                <small>Created by admin</small>
+                                                <small>{{$event->user->username}}</small>
                                             </td>
                                             <td>
                                                 <ul class="list-inline">
@@ -71,17 +69,16 @@
                                                 </ul>
                                             </td>
                                             <td class="project_progress">
-                                                <small>Bob is a huge loser and we're gonna pelt him with eggs to make him cry. Also, geocaching.</small>
+                                                <small>{{$event->short_description}}</small>
                                             </td>
                                             <td class="project_progress">
-                                                <small>12/11/16 5:00 PM - 6:30 PM</small>
+                                                <small>{{$event->start_date}}</small>
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                <a href="/events/{{$event->id}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                     <!-- end event list -->

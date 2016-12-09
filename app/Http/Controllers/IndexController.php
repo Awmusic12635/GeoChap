@@ -22,8 +22,7 @@ class IndexController extends Controller
             Mapper::marker($cache->lat,$cache->long,['eventClick' => "window.location='/caches/$cache->id';"]);
         }
 
-        //later change this to ("approved",true)
-        $caches = Cache::where('approved',false)->latest()->limit(10)->get();
+        $caches = Cache::where('approved',true)->latest()->limit(10)->get();
         $users = User::latest()->limit(10)->get();
         $events = Event::where('id','>',0)->latest()->limit(10)->get();
 
