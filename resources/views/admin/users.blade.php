@@ -27,8 +27,8 @@
                                         <h2>{{$user->username}}</h2>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-envelope"></i> Email: {{$user->email}}</li>
-                                            <li><i class="fa fa-check-square"></i> Checkins: {{count($user->checkins())}}</li>
-                                            <li><i class="fa fa-cubes"></i> Caches: {{count($user->caches())}}</li>
+                                            <li><i class="fa fa-check-square"></i> Checkins: {{$user->checkins()->count()}}</li>
+                                            <li><i class="fa fa-cubes"></i> Caches: {{$user->caches()->count()}}</li>
                                         </ul>
                                     </div>
                                     <div class="right col-xs-5 text-center">
