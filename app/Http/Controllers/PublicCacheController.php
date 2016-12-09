@@ -8,6 +8,7 @@ use App\User;
 use App\Event;
 use App\Comment;
 use App\Checkin;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 class PublicCacheController extends Controller
 {
@@ -27,6 +28,9 @@ class PublicCacheController extends Controller
             abort(404);
         }else{
             $cache = $caches->first();
+            Mapper::map(43.1610,-77.6109,['marker'=>true,'locate'=>false,'center'=>true]);
+            Mapper::map($cache->lat,$cache->long);
+
             $checkins = Checkin::where('cache_id',$cache->id)->latest()->get();
 
             return view('public.caches.detailed',compact('cache','checkins'));
