@@ -91,7 +91,7 @@
                                 <div class="project_detail">
 
                                     <p class="title">Created By</p>
-                                    <p>{{$cache->user->username}}</p>
+                                    <p>{{$cache->user()->username}}</p>
                                     <p class="title">Status</p>
                                     <p>{{$cache->status}}</p>
                                 </div>
