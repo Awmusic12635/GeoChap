@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class EventCheckin extends Model
 {
     public function user(){
         return $this->hasOne(User::class);
     }
-    public function checkins(){
-        return $this->belongsToMany(EventCheckin::class);
+
+    public function event(){
+        return $this->hasOne(Event::class);
     }
 }

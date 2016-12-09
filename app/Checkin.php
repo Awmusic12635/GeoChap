@@ -20,5 +20,10 @@ class Checkin extends Model
         return $this->hasOne(Comment::class);
     }
 
+    public function cache(){
+        return $this->hasOne(Cache::class);
+    }
+
+
 
 }

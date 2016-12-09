@@ -23,6 +23,7 @@ class CreateCheckinsTable extends Migration
             $table->foreign('comment')->references('id')->on('comments');
             $table->timestamps();
         });
+
     }
 
     /**

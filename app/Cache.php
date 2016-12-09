@@ -14,6 +14,10 @@ class Cache extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function checkin(){
+        $this->belongsToMany(Checkin::class);
+    }
+
     /**
      * The attributes that should be casted to native types.
      *

@@ -50,7 +50,11 @@ class User extends Authenticatable
      * Get all the caches for the user
      */
     public function checkins(){
-        return $this->hasMany(Checkin::class);
+        return $this->belongsToMany(Checkin::class);
+    }
+
+    public function eventCheckins(){
+        return $this->belongsToMany(EventCheckin::class);
     }
 
 
