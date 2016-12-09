@@ -43,7 +43,7 @@ class User extends Authenticatable
      * Get all the caches for the user
      */
     public function caches(){
-        return $this->hasMany(Cache::class);
+        return $this->belongsToMany(Cache::class);
     }
 
     /*
