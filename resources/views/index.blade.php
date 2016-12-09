@@ -9,7 +9,7 @@
     <div class="clearfix"></div>
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div style="height:350px;width:1000px;" id="map"></div>
+            <div style="height:350px;width:100%;" id="map"></div>
             <div class="x_panel">
 
             </div>
