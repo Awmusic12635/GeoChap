@@ -58,8 +58,8 @@
                                             <p class="month">{{date("F", mktime(0, 0, 0, $checkin[$i]->created_at->month, 1))}}</p>
                                         </div>
                                         <div class="message_wrapper">
-                                            <h4 class="heading">{{$checkin[$i]->user()->username}}</h4>
-                                            <blockquote class="message">{{$checkin->comment()->message}}</blockquote>
+                                            <h4 class="heading">{{$checkin[$i]->user->username}}</h4>
+                                            <blockquote class="message">{{$checkin->comment->message}}</blockquote>
                                             <br />
                                         </div>
                                     </li>
@@ -91,7 +91,7 @@
                                 <div class="project_detail">
 
                                     <p class="title">Created By</p>
-                                    <p>{{$cache->user()->username}}</p>
+                                    <p>{{$cache->user->username}}</p>
                                     <p class="title">Status</p>
                                     <p>{{$cache->status}}</p>
                                 </div>
