@@ -105,6 +105,7 @@ class CacheController extends Controller
         $cache->save();
 
         //not sure if I have to redirect back to a specific view after this
+        return redirect()->back();
     }
 
 }

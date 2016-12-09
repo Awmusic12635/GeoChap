@@ -35,7 +35,7 @@
                         True
                     @endif
                 </td>
-                </tr>
+            </tr>
             @endforeach
         </tbody>
     </table>
