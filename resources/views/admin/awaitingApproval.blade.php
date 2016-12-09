@@ -33,6 +33,9 @@
         @endforeach
         </tbody>
     </table>
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script>
         $('#cachetable').DataTable();
     </script>

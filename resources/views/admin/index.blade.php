@@ -34,5 +34,8 @@
         <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>-->
     </div>
 </div>
+<!-- jQuery -->
+<script src="/vendors/jquery/dist/jquery.min.js"></script>
+<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <!-- /top tiles -->
 @endsection
