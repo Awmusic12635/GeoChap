@@ -20,6 +20,8 @@ class IndexController extends Controller
             Mapper::marker($cache->lat,$cache->long,['eventClick' => "window.location='/cache/$cache->id';"]);
         }
 
-        return view('index');
+        $caches = Cache::where('approved',false)->sortByDesc('id','desc')->limit(10)->get();
+
+        return view('index',compact('caches'));
     }
 }
