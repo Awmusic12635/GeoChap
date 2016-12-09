@@ -19,4 +19,7 @@ class Cache extends Model
      *
      * @var array
      */
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
 }
