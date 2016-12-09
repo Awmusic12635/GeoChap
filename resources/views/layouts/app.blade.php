@@ -49,18 +49,19 @@
                 </div>
 
                 <div class="clearfix"></div>
-
+            @if(Auth::check())
                 <!-- menu profile quick info -->
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>{{ Auth::user()->username }}</h2>
+                        </div>
                     </div>
-                    <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>{{ Auth::user()->username }}</h2>
-                    </div>
-                </div>
-                <!-- /menu profile quick info -->
+            @endif
+            <!-- /menu profile quick info -->
 
                 <br />
 
@@ -69,24 +70,26 @@
                     <div class="menu_section">
 
                         <ul class="nav side-menu">
-                            @if(Auth::user()->is_admin)
-                                <h3>Admin</h3>
-                                <li><a><i class="fa fa-home"></i> Admin <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="/admin">Admin Dashboard</a></li>
-                                        <li><a>Caches<span class="fa fa-chevron-down"></span></a>
-                                            <ul class="nav child_menu">
-                                                <li class="sub_menu"><a href="/admin/caches">List Caches</a>
-                                                </li>
-                                                <li><a href="/admin/caches/new">Add Cache</a>
-                                                </li>
-                                                <li><a href="/admin/caches/awaitingApproval">Awaiting Approval</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/admin/users">Users</a></li>
-                                    </ul>
-                                </li>
+                            @if(Auth::check())
+                                @if(Auth::user()->is_admin)
+                                    <h3>Admin</h3>
+                                    <li><a><i class="fa fa-home"></i> Admin <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="/admin">Admin Dashboard</a></li>
+                                            <li><a>Caches<span class="fa fa-chevron-down"></span></a>
+                                                <ul class="nav child_menu">
+                                                    <li class="sub_menu"><a href="/admin/caches">List Caches</a>
+                                                    </li>
+                                                    <li><a href="/admin/caches/new">Add Cache</a>
+                                                    </li>
+                                                    <li><a href="/admin/caches/awaitingApproval">Awaiting Approval</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/admin/users">Users</a></li>
+                                        </ul>
+                                    </li>
+                                @endif
                             @endif
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
@@ -130,33 +133,39 @@
                     </div>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="/images/img.jpg" alt="">{{ Auth::user()->username }}
-                                <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a></li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li><a href="javascript:;">Help</a></li>
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                       onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+                        @if(Auth::check())
+                            <li class="">
 
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="/images/img.jpg" alt="">{{ Auth::user()->username }}
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                           onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @else
+                            <li><a href="/login">Login</a></li>
+                        @endif
+
 
                         <li role="presentation" class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
