@@ -117,7 +117,7 @@ class PublicCacheController extends Controller
 
             $checkin = new Checkin();
             $checkin->user_id=$request->user()->id;
-            $checkin->cache_id->$cacheId;
+            $checkin->cache_id=$cacheId;
             $checkin->comment_id=$comment->id;
 
             $checkin->save();
