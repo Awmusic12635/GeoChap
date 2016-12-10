@@ -28,7 +28,7 @@ class PublicCacheController extends Controller
             abort(404);
         }else{
             $cache = $caches->first();
-            Mapper::map(43.1610,-77.6109,['marker'=>true,'locate'=>false,'center'=>true,'zoom'=>12]);
+            Mapper::map(43.1610,-77.6109,['marker'=>true,'locate'=>false,'center'=>true,'zoom'=>13]);
             Mapper::map($cache->lat,$cache->long);
 
             $checkins = Checkin::where('cache_id',$cache->id)->latest()->get();
@@ -87,7 +87,43 @@ class PublicCacheController extends Controller
         return redirect()->back();
 
     }
+    public function showCheckinForm(Request $request,$cacheId){
+        $caches = Cache::where('id',$cacheId)->get();
+
+        if($caches->isEmpty()) {
+            abort(404);
+        }else{
+            return view('public.caches.checkin',compact('cacheId'));
+        }
+    }
     public function checkIn(Request $request,$cacheId){
 
+        $caches = Cache::where('id',$cacheId)->get();
+
+        if($caches->isEmpty()) {
+            abort(404);
+        }else{
+            $this->validate($request, [
+                'comment' => 'required|max:255',
+            ]);
+
+            $commentIn = $request->input('comment');
+
+            $comment = new Comment();
+            $comment->message=$commentIn;
+            $comment->posted_by=$request->user()->id;
+
+            $comment->save();
+
+            $checkin = new Checkin();
+            $checkin->user_id=$request->user()->id;
+            $checkin->cache_id->$cacheId;
+            $checkin->comment_id=$comment->id;
+
+            $checkin->save();
+
+
+            redirect('/caches/$cacheId');
+        }
     }
 }
