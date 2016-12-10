@@ -91,36 +91,18 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>First Event</td>
-                                        <td>sdfasdfasdfasdfasdf</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/events/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Event
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Second Event</td>
-                                        <td>dafsdfsdf</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/events/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Event
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Third Event</td>
-                                        <td>sdfasdfsd</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/events/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Event
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @foreach($user->eventCheckins as $eventCheckin)
+                                        <tr>
+                                            <td>{{$eventCheckin->event->id}}</td>
+                                            <td>{{$eventCheckin->event->name}}</td>
+                                            <td>{{$eventCheckin->event->short_description}}</td>
+                                            <td class="vertical-align-mid">
+                                                <button onclick="window.location='/events/{{$eventCheckin->event->id}}'" type="button" class="btn btn-primary btn-xs">
+                                                    <i class="fa fa-user"> </i> View Event
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                                 <!-- end events -->

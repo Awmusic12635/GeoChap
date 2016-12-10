@@ -84,7 +84,7 @@
                         <article class="media event">
                             <a class="pull-left date">
                                 <p class="month">{{substr(date("F", mktime(0, 0, 0, substr($event->start_date,0,2), 1)),0,5)}}</p>
-                                <p class="day">{{substr($event->start_date,2,2)}}</p>
+                                <p class="day">{{substr($event->start_date,3,2)}}</p>
                             </a>
                             <div class="media-body">
                                 <a class="title" href="/events/{{$event->id}}">{{$event->name}}</a>
