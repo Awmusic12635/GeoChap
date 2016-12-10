@@ -113,7 +113,7 @@
                                 <br />
                                 @if(Auth::check())
                                 <div class="text-center mtop20">
-                                    <a href="/cache/{{$cache->id}}/checkIn" class="btn btn-sm btn-primary">Checkin</a>
+                                    <a href="/caches/{{$cache->id}}/checkIn" class="btn btn-sm btn-primary">Checkin</a>
                                 </div>
                                 @endif
                             </div>
