@@ -25,7 +25,7 @@ class EventController extends Controller
 
             $eventCheckin->save();
 
-            back();
+            return back();
         }
     }
     public function showEvent(Request $request,$eventId){
@@ -35,7 +35,7 @@ class EventController extends Controller
             abort(404);
         }else{
             $event = $events->first();
-            $checkins = EventCheckin::where('event_id',$event->id);
+            $checkins = EventCheckin::where('event_id',$event->id)->get();
             $attending = false;
 
             $eventCheckinTest = EventCheckin::where('user_id',$request->user()->id)->get();
