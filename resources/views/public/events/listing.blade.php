@@ -72,7 +72,7 @@
                                                 <small>{{$event->short_description}}</small>
                                             </td>
                                             <td class="project_progress">
-                                                <small>{{$event->start_date->toFormattedDateString}}</small>
+                                                <small>{{$event->start_date}}</small>
                                             </td>
                                             <td>
                                                 <a href="/events/{{$event->id}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>

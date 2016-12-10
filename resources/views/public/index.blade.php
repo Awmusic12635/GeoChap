@@ -83,8 +83,8 @@
                     @foreach($events as $event)
                         <article class="media event">
                             <a class="pull-left date">
-                                <p class="month">{{substr(date("F", mktime(0, 0, 0, $event->start_date->month, 1)),0,5)}}</p>
-                                <p class="day">{{$event->start_date->day}}</p>
+                                <p class="month">{{substr(date("F", mktime(0, 0, 0, substr($event->start_date,0,2), 1)),0,5)}}</p>
+                                <p class="day">{{substr($event->start_date,2,2)}}</p>
                             </a>
                             <div class="media-body">
                                 <a class="title" href="/events/{{$event->id}}">{{$event->name}}</a>
