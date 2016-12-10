@@ -104,7 +104,7 @@ class PublicCacheController extends Controller
             abort(404);
         }else{
             $this->validate($request, [
-                'comment' => 'required|max:255',
+                'comment' => 'required|max:200',
             ]);
 
             $commentIn = $request->input('comment');
@@ -123,7 +123,7 @@ class PublicCacheController extends Controller
             $checkin->save();
 
 
-            redirect('/caches/$cacheId');
+            redirect('/caches/'.$cacheId);
         }
     }
 }

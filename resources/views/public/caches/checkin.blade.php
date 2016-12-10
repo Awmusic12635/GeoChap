@@ -23,7 +23,7 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" role="form" method="POST" action="{{ url('/caches/$cacheId/checkIn')}}">
+                    <form class="form-horizontal form-label-left" role="form" method="POST" action="{{ url('/caches/'.$cacheId.'/checkIn')}}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
