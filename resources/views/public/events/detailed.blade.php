@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('content')
     <!-- page content -->
-    <div class="right_col" role="main">
-        <div class="">
             <div class="page-title">
                 <div class="title_left">
                     <h3>Event Details</h3>
@@ -109,15 +107,15 @@
                                         <div class="project_detail">
 
                                             <p class="title">Organized By</p>
-                                            <p>{{$event->user_id}}</p>
+                                            <p>{{$event->user->username}}</p>
                                         </div>
 
                                         <br />
                                         <h5>Details</h5>
                                         <ul class="list-unstyled project_files">
-                                            <li><a href=""><i class="fa fa-file-word-o"></i> <strong>Start Time:</strong> {{$event->start_time}}</a>
+                                            <li><a href=""><i class="fa fa-file-word-o"></i> <strong>Start Time:</strong> {{$event->start_date}}</a>
                                             </li>
-                                            <li><a href=""><i class="fa fa-file-pdf-o"></i> <strong>End Time:</strong> {{$event->end_time}}</a>
+                                            <li><a href=""><i class="fa fa-file-pdf-o"></i> <strong>End Time:</strong> {{$event->end_date}}</a>
                                             </li>
                                             <li><a href=""><i class="fa fa-mail-forward"></i> <strong>Location:</strong> {{$event->location}}</a>
                                             </li>
@@ -142,8 +140,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     <!-- /page content -->
 
 @endsection

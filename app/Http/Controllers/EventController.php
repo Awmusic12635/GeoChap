@@ -19,7 +19,9 @@ class EventController extends Controller
             $event = $events->first();
             $checkins = EventCheckin::where('event_id',$event->id);
             $attending = false;
-            if((EventCheckin::where('user_id',$request->user()->id)->get())->isEmpty()){
+
+            $eventCheckinTest = EventCheckin::where('user_id',$request->user()->id)->get();
+            if($eventCheckinTest->isEmpty()){
                 $attending=false;
             }else{
                 $attending=true;
