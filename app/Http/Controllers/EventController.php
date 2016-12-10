@@ -10,6 +10,24 @@ use App\EventCheckin;
 
 class EventController extends Controller
 {
+    public function joinEvent(Request $request,$eventId){
+        $events = Event::where('id',$eventId)->get();
+
+        if($events->isEmpty()) {
+            abort(404);
+        }
+        else{
+            $event = $events->first();
+            $eventCheckin = new EventCheckin();
+
+            $eventCheckin->user_id=$request->user()-id;
+            $eventCheckin->event_id=$event-id;
+
+            $eventCheckin->save();
+
+            back();
+        }
+    }
     public function showEvent(Request $request,$eventId){
         $events = Event::where('id',$eventId)->get();
 
