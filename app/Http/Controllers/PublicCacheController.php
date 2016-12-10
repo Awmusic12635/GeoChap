@@ -123,7 +123,7 @@ class PublicCacheController extends Controller
             $checkin->save();
 
 
-            redirect('/caches/'.$cacheId);
+            return redirect('/caches/'.$cacheId);
         }
     }
 }

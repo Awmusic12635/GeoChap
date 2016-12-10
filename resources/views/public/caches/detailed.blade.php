@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="message_wrapper">
                                             <h4 class="heading">{{$checkin[$i]->user->username}}</h4>
-                                            <blockquote class="message">{{$checkin->comment->message}}</blockquote>
+                                            <blockquote class="message">{{$checkin[$i]->comment->message}}</blockquote>
                                             <br />
                                         </div>
                                     </li>
