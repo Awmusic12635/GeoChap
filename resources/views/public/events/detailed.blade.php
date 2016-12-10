@@ -121,10 +121,12 @@
                                         <br />
 
                                         <div class="text-center mtop20">
-                                            @if($attending)
-                                                <a href="/events/{{$event->id}}/join" class="btn btn-sm btn-primary">Attend</a>
-                                            @else
-                                                <a href="#" class="btn btn-sm btn-primary">Attending</a>
+                                            @if(Auth::check())
+                                                @if($attending)
+                                                    <a href="/events/{{$event->id}}/join" class="btn btn-sm btn-primary">Attend</a>
+                                                @else
+                                                    <a href="#" class="btn btn-sm btn-primary">Attending</a>
+                                                @endif
                                             @endif
                                         </div>
                                     </div>
