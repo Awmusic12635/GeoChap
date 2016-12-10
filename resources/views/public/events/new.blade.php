@@ -77,7 +77,7 @@
                                 @endif
                             </div>
                         </div>
-                                <div class="form-group{{ $errors->has('long_description') ? ' has-error' : '' }}">
+                                <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                     <label for="description" class="col-md-4 control-label">Long Description (20 chars min, 200 max):</label>
                                     <div class="col-md-6">
             <textarea id="description" required="required" class="form-control" name="description"
