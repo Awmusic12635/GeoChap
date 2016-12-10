@@ -25,4 +25,11 @@ class PublicUserController extends Controller
         }
     }
 
+    public function showUserProfile(Request $request){
+
+        $user = $request->user();
+
+        return view('public.users.detailed',compact('user'));
+    }
+
 }

@@ -72,15 +72,9 @@ Route::post('/admin/events/{eventId}', 'AdminController@showAdmin')->middleware(
 
 //update controller and names
 
-Route::get('/users', 'UserController@showAdmin');
-Route::get('/users/{userId}', 'UserController@showAdmin');
-
-
-/*
- * Leadboard (maybe) - need to think about this one more.
- */
-
-Route::get('/leaderboard', 'LeaderboardController@showAdmin');
+Route::get('/users', 'PublicUserController@showUsers');
+Route::get('/users/{userId}', 'PublicUserController@showUser');
+Route::get('/profile', 'PublicUserController@showUserProfile')->middleware('auth');;
 
 /*
  * Auth routes
