@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Event;
 use App\EventCheckin;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
