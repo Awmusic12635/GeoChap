@@ -11,6 +11,6 @@ class EventCheckin extends Model
     }
 
     public function event(){
-        return $this->hasOne(Event::class);
+        return $this->belongsTo(Event::class);
     }
 }
