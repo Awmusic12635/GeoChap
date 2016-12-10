@@ -20,8 +20,8 @@ class EventController extends Controller
             $event = $events->first();
             $eventCheckin = new EventCheckin();
 
-            $eventCheckin->user_id=$request->user()-id;
-            $eventCheckin->event_id=$event-id;
+            $eventCheckin->user_id=$request->user()->id;
+            $eventCheckin->event_id=$event->id;
 
             $eventCheckin->save();
 
