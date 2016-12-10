@@ -36,7 +36,30 @@
                                 @endif
                             </div>
                         </div>
- 
+                        <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}">
+                            <label for="start_date" class="col-md-4 control-label">Start Date</label>
+                            <div class="col-md-6">
+                                <input id="start_date" type="textbox" placeholder="12/16/2016" class="form-control" name="start_date" value="{{old('start_date')}}" required autofocus>
+                                @if ($errors->has('start_date'))
+                                    <span class="help-block">
+                    <strong>{{ $errors->first('start_date') }}</strong>
+                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
+                            <label for="end_date" class="col-md-4 control-label">Start Date</label>
+                            <div class="col-md-6">
+                                <input id="end_date" type="textbox" placeholder="12/17/2016" class="form-control" name="end_date" value="{{old('end_date')}}" required autofocus>
+                                @if ($errors->has('end_date'))
+                                    <span class="help-block">
+                    <strong>{{ $errors->first('end_date') }}</strong>
+                </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('short_description') ? ' has-error' : '' }}">
                             <label for="short_description" class="col-md-4 control-label">Short Description</label>
                             <div class="col-md-6">
