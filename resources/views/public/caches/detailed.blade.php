@@ -50,7 +50,7 @@
                                 @if($checkins->count() >0)
                                     @for($i = 0; $i < ($checkins->count() > 4 ? 4 :$checkins->count()); $i++)
                                     <li>
-                                        <img src="images/user.png" class="avatar" alt="Avatar">
+                                        <img src="/images/user.png" class="avatar" alt="Avatar">
                                         <div class="message_date">
                                             <h3 class="date text-info">{{$checkins[$i]->created_at->day}}</h3>
                                             <p class="month">{{date("F", mktime(0, 0, 0, $checkins[$i]->created_at->month, 1))}}</p>
