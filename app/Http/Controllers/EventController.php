@@ -21,7 +21,7 @@ class EventController extends Controller
             $attending = false;
 
             $eventCheckinTest = EventCheckin::where('user_id',$request->user()->id)->get();
-            if($eventCheckinTest->isEmpty()){
+            if($eventCheckinTest->count()>0){
                 $attending=false;
             }else{
                 $attending=true;
