@@ -14,8 +14,8 @@ class AllowNullableForTime extends Migration
     public function up()
     {
         Schema::table('events', function ($table) {
-            $table->string('end_time')->nullable();
-            $table->string('start_time')->nullable();
+            $table->string('end_time')->nullable()->change();
+            $table->string('start_time')->nullable()->change();
         });
     }
 
@@ -27,8 +27,8 @@ class AllowNullableForTime extends Migration
     public function down()
     {
         Schema::table('events', function ($table) {
-            $table->string('end_time');
-            $table->string('start_time');
+            $table->string('end_time')->change();
+            $table->string('start_time')->change();
         });
     }
 }
