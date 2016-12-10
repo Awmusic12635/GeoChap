@@ -70,8 +70,6 @@
                                                 </div>
                                                 <div class="col-xs-12 bottom text-center">
                                                     <div class="col-xs-12 col-sm-6 emphasis">
-                                                        <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
-                                                            </i> <i class="fa fa-comments-o"></i> </button>
                                                         <button onclick="window.location='/users/{{$checkin->user->id}}'" type="button" class="btn btn-primary btn-xs">
                                                             <i class="fa fa-user"> </i> View Profile
                                                         </button>

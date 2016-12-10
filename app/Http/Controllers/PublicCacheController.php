@@ -28,7 +28,7 @@ class PublicCacheController extends Controller
             abort(404);
         }else{
             $cache = $caches->first();
-            Mapper::map(43.1610,-77.6109,['marker'=>true,'locate'=>false,'center'=>true]);
+            Mapper::map(43.1610,-77.6109,['marker'=>true,'locate'=>false,'center'=>true,'zoom'=>8]);
             Mapper::map($cache->lat,$cache->long);
 
             $checkins = Checkin::where('cache_id',$cache->id)->latest()->get();
