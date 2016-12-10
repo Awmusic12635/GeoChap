@@ -33,8 +33,8 @@ Route::post('/caches', 'PublicCacheController@addCache')->middleware('auth');
 
 
 Route::get('/events', 'EventController@listEvents');
-Route::get('/events/{eventId}', 'EventController@showEvent');
 Route::get('/events/new', 'EventController@newEventForm')->middleware('auth');
+Route::get('/events/{eventId}', 'EventController@showEvent');
 Route::post('/events', 'EventController@newEventCreation')->middleware('auth');
 
 //probably need some route for handling the joining of an event. perhaps this?

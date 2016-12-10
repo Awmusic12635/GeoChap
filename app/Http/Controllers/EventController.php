@@ -14,4 +14,8 @@ class EventController extends Controller
 
         return view('public.events.listing',compact('events'));
     }
+
+    public function newEventForm(Request $request){
+        return view('public.events.new');
+    }
 }
