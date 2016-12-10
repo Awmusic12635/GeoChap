@@ -49,10 +49,11 @@
                                             <td>
                                                 <a>{{$event->name}}</a>
                                                 <br />
-                                                <small>{{$event->user->username}}</small>
+                                                <small>Made by: {{$event->user->username}}</small>
                                             </td>
                                             <td>
                                                 <ul class="list-inline">
+
                                                     <li>
                                                         <img src="images/user.png" class="avatar" alt="Avatar">
                                                     </li>

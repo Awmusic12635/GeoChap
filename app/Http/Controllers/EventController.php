@@ -6,9 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Event;
+use App\EventCheckin;
 
 class EventController extends Controller
 {
+    public function showEvent(Request $request,$eventId){
+        $events = Event::where('id',$eventId)->get();
+
+        if($events->isEmpty()){
+            abort(404);
+        }else{
+            $event = $events->first();
+            $checkins = EventCheckin::where('event_id',$event->id);
+            $attending = false;
+            if((EventCheckin::where('user_id',$request->user()->id)->get())->isEmpty()){
+                $attending=false;
+            }else{
+                $attending=true;
+            }
+
+            return view('public.events.detailed',compact('event','checkins','attending'));
+        }
+    }
     public function listEvents(Request $request){
         $events = Event::all();
 
