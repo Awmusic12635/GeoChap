@@ -4,17 +4,6 @@
     <div class="title_left">
         <h3>User Profile</h3>
     </div>
-
-    <div class="title_right">
-        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="clearfix"></div>
@@ -35,25 +24,21 @@
                     <div class="profile_img">
                         <div id="crop-avatar">
                             <!-- Current avatar -->
-                            <img class="img-responsive avatar-view" src="/images/picture.jpg" alt="Avatar" title="Change the avatar">
+                            <img class="img-responsive avatar-view" src="/images/user.png" alt="Avatar" title="Change the avatar">
                         </div>
                     </div>
-                    <h3>Samuel Doe</h3>
+                    <h3>{{$user->username}}</h3>
 
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-envelope"></i> Email:
+                        <li><i class="fa fa-envelope"></i> Email: {{$user->email}}
                         </li>
 
                         <li>
-                            <i class="fa fa-check-square"></i> Checkins:
+                            <i class="fa fa-check-square"></i> Checkins: {{$user->checkins->count()}}
                         </li>
                         <li>
-                            <i class="fa fa-cubes"></i> Caches:
+                            <i class="fa fa-cubes"></i> Caches: {{$user->caches->count()}}
                         </li>
-
-                        <br />
-                        <a class="btn btn-success margin-top: 10px"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
-                        <br />
 
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -75,71 +60,20 @@
 
                                 <!-- start recent activity -->
                                 <ul class="messages">
+                                    @foreach($user->checkins->reverse() as $checkin)
                                     <li>
                                         <img src="/images/user.png" class="avatar" alt="Avatar">
                                         <div class="message_date">
-                                            <h3 class="date text-info">24</h3>
-                                            <p class="month">May</p>
+                                            <h3 class="date text-info">{{$checkin->created_at->day}}</h3>
+                                            <p class="month">{{substr(date("F", mktime(0, 0, 0, $checkin->created_at->month, 1)),0,5)}}</p>
                                         </div>
                                         <div class="message_wrapper">
-                                            <h4 class="heading">Desmond Davison</h4>
-                                            <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+                                            <h4 class="heading">{{$checkin->cache->name}}</h4>
+                                            <blockquote class="message">{{$checkin->comment->message}}</blockquote>
                                             <br />
-                                            <p class="url">
-                                                <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                                <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                            </p>
                                         </div>
                                     </li>
-                                    <li>
-                                        <img src="/images/user.png" class="avatar" alt="Avatar">
-                                        <div class="message_date">
-                                            <h3 class="date text-error">21</h3>
-                                            <p class="month">May</p>
-                                        </div>
-                                        <div class="message_wrapper">
-                                            <h4 class="heading">Brian Michaels</h4>
-                                            <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                            <br />
-                                            <p class="url">
-                                                <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                                <a href="#" data-original-title="">Download</a>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="/images/user.png" class="avatar" alt="Avatar">
-                                        <div class="message_date">
-                                            <h3 class="date text-info">24</h3>
-                                            <p class="month">May</p>
-                                        </div>
-                                        <div class="message_wrapper">
-                                            <h4 class="heading">Desmond Davison</h4>
-                                            <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                            <br />
-                                            <p class="url">
-                                                <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                                <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="/images/user.png" class="avatar" alt="Avatar">
-                                        <div class="message_date">
-                                            <h3 class="date text-error">21</h3>
-                                            <p class="month">May</p>
-                                        </div>
-                                        <div class="message_wrapper">
-                                            <h4 class="heading">Brian Michaels</h4>
-                                            <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                            <br />
-                                            <p class="url">
-                                                <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                                <a href="#" data-original-title="">Download</a>
-                                            </p>
-                                        </div>
-                                    </li>
-
+                                    @endforeach
                                 </ul>
                                 <!-- end recent activity -->
 
