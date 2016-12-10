@@ -52,21 +52,23 @@
                     </ul>
                     <div class="clearfix"></div>
                 </div>
-                <ul class="list-unstyled top_profiles scroll-view">
-                    @foreach($users as $user)
-                    <li class="media event">
-                        <a class="pull-left border-blue profile_thumb">
-                            <i class="fa fa-user blue"></i>
-                        </a>
-                        <div class="media-body">
-                            <a class="title" href="/users/{{$user->id}}">{{$user->username}}</a>
-                            <p><strong>{{$user->checkins()->count()}} </strong> Checkins Total </p>
-                            <p> <small>Joined {{date("F", mktime(0, 0, 0, $user->created_at->month, 1)) ." " .$user->created_at->day }}</small>
-                            </p>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
+                <div class="x_content">
+                    <ul class="list-unstyled top_profiles scroll-view">
+                        @foreach($users as $user)
+                        <li class="media event">
+                            <a class="pull-left border-blue profile_thumb">
+                                <i class="fa fa-user blue"></i>
+                            </a>
+                            <div class="media-body">
+                                <a class="title" href="/users/{{$user->id}}">{{$user->username}}</a>
+                                <p><strong>{{$user->checkins()->count()}} </strong> Checkins Total </p>
+                                <p> <small>Joined {{date("F", mktime(0, 0, 0, $user->created_at->month, 1)) ." " .$user->created_at->day }}</small>
+                                </p>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
