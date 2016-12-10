@@ -17,11 +17,11 @@ class Checkin extends Model
      * Get the user that owns this checkin
      */
     public function comment(){
-        return $this->belongsTo(Comment::class);
+        return $this->hasOne(Comment::class);
     }
 
     public function cache(){
-        return $this->hasOne(Cache::class);
+        return $this->belongsTo(Cache::class);
     }
 
 
