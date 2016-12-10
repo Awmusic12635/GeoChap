@@ -11,6 +11,6 @@ class Comment extends Model
      */
 
     public function checkin(){
-        return $this->belongsTo(Checkin::class);
+        return $this->hasOne(Checkin::class);
     }
 }
