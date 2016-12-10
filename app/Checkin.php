@@ -17,7 +17,7 @@ class Checkin extends Model
      * Get the user that owns this checkin
      */
     public function comment(){
-        return $this->hasOne(Comment::class);
+        return $this->belongsTo(Comment::class);
     }
 
     public function cache(){
