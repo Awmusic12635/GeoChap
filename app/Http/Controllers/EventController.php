@@ -37,15 +37,17 @@ class EventController extends Controller
             $event = $events->first();
             $checkins = EventCheckin::where('event_id',$event->id)->get();
             $attending = false;
-
-            $eventCheckinTest = EventCheckin::where('user_id',$request->user()->id)->get();
-            if($eventCheckinTest->count()>0){
-                $attending=false;
+            if(Auth::check()){
+                $eventCheckinTest = EventCheckin::where('user_id',$request->user()->id)->get();
+                if($eventCheckinTest->count()>0){
+                    $attending=false;
+                }else{
+                    $attending=true;
+                }
+                return view('public.events.detailed',compact('event','checkins','attending'));
             }else{
-                $attending=true;
+                return view('public.events.detailed',compact('event','checkins'));
             }
-
-            return view('public.events.detailed',compact('event','checkins','attending'));
         }
     }
     public function listEvents(Request $request){
