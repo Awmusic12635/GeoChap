@@ -52,8 +52,6 @@
                             </li>
                             <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Caches</a>
                             </li>
-                            <li role="presentation" class=""><a href="#tab_content4" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
-                            </li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
@@ -121,43 +119,22 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Cache</td>
-                                        <td>sdfasdfasdfasdfasdf</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/caches/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Cache
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Cache</td>
-                                        <td>sdfasdfasdfasdfasdf</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/caches/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Cache
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Cache</td>
-                                        <td>sdfasdfasdfasdfasdf</td>
-                                        <td class="vertical-align-mid">
-                                            <button onclick="window.location='/caches/1'" type="button" class="btn btn-primary btn-xs">
-                                                <i class="fa fa-user"> </i> View Cache
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @foreach($user->caches as $cache)
+                                        <tr>
+                                            <td>{{$cache->id}}</td>
+                                            <td>{{$cache->name}}</td>
+                                            <td>{{$cache->short_description}}</td>
+                                            <td class="vertical-align-mid">
+                                                <button onclick="window.location='/caches/{{$cache->id}}'" type="button" class="btn btn-primary btn-xs">
+                                                    <i class="fa fa-user"> </i> View Cache
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                                 <!-- end caches -->
 
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
-                                <p>PROFILE INFO HERE!</p>
                             </div>
                         </div>
                     </div>
