@@ -15,7 +15,7 @@ class Cache extends Model
     }
 
     public function checkin(){
-        return $this->belongsToMany(Checkin::class);
+        return $this->belongsTo(Checkin::class);
     }
 
     /**
